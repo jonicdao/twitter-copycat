@@ -1,0 +1,27 @@
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Edit A Tweet</h1>
+        </header>
+        <div class="h-divider"></div>
+        <main>
+            <section>
+                <form action="/tweets/{{tweet.id}}/update" method="post">
+                    <div>
+                        <label for="tweet">Tweet</label>
+                        <input type="text" name="tweet">
+                    </div>
+                    {% with messages = get_flashed_messages() %}
+                        {% for message in messages %}
+                            <span>{{message}}</span>
+                        {% endfor %}
+                    {% endwith %}
+                    <input type="submit" value="Update">
+                    <button><a href="/twitter">cancel</a></button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
